@@ -64,21 +64,38 @@
             bottom: 0;
             width: 100%;
         }
-                .image-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 0;
-            margin-top: auto;
-        }
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 10px;
+}
 
-        .image-row img {
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.image-row img {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: auto;
+    width: 100%;
+    max-width: 150px;           /* default for desktop */
+}
+
+/* Mobile: 2 images per row */
+@media (max-width: 640px) {
+    .image-row img {
+        max-width: calc(50% - 6px);   /* 2 per row */
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .image-row {
+        gap: 8px;
+    }
+    .image-row img {
+        max-width: calc(50% - 4px);
+    }
+}
     </style>
 </head>
 <body>
